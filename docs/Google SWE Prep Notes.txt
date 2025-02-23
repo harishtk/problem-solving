@@ -1,0 +1,66 @@
+Google SWE Preparation
+
+1. SWE Domains at Google (Front End -> Android, iOS -> |Sec/Privacy| ML -> GEN SWE |ENG PROD| -> Infra -> Embedded)
+
+---------------------
+
+SWE Interview Process 
+(Virtual interviews)
+
+Recruiter Screening -> Prep -> Preliminary Screening -> Tech Onsite Interview 1 ->
+Tech Onsite Interview 2 -> Domain/Tech Onsite Interview 3 -> G&L Round -> Offer review.
+
+---------------------
+
+Interview Format
+45 Minutes to 1 Hr each.
+
+* Short Intro
+* Technical assessment
+* Close with candidate's questions
+
+---------------------
+
+Key Assessment Areas (Phone Interview)
+
+* Coding 
+* Data Structures
+* Algorithms
+
+- No IDE, Only syntax highlighters.
+
+Don't care about perfection, just cover max edge cases, and test.
+
+---------------------
+
+How to approach a coding round
+
+Clarify - 
+Assume - 
+Start Simple - 
+Iterate - 
+Implement - 
+
+DS
+
+Graphs, Lists, Stacks, Heap, and more..
+
+Note:
+1. Explain solution before coding.
+2. Explain how to test. (verbally)
+3. Clarify. 
+
+STAR - Situation, Task, Action and Result
+
+=====================
+
+Ask the recruiter
+1. Mock interviews.
+2. Coding and DSA prep kit.
+
+
+As of discussed, there will be no compiler for the coding rounds, and then we were asked to write the actual code rather than the pseudo code. The how will the language proficiency measured? Please explain more about that.
+
+
+
+

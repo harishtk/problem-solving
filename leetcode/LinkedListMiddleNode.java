@@ -1,5 +1,6 @@
 package leetcode;
 
+
 public class LinkedListMiddleNode {
     public static void main(String[] args) {
         final ListNode head = new ListNode(1);
@@ -44,13 +45,5 @@ public class LinkedListMiddleNode {
             curr = curr.next;
         }
         return i;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 }
