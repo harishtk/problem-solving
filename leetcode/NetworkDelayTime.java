@@ -63,4 +63,9 @@ public class NetworkDelayTime {
             return -1;
         }
     }
+
+    // Using Dijkstra's algorithm
+    public static int networkDelayTime2(int[][] times, int n, int k) { 
+        
+    }
 }
