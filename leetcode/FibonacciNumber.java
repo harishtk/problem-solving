@@ -90,7 +90,7 @@ public class FibonacciNumber {
         System.out.println(Math.pow(5, 0.5) / 2);
 
         double goldenRatio = (1 + (Math.pow(5, 0.5))) / 2;
-        return (int) (Math.round(Math.pow(goldenRatio, n)) / Math.pow(5, 0.5));
+        return (int) (Math.round(Ma th.pow(goldenRatio, n)) / Math.pow(5, 0.5));
 
         // Golden Ratio 
         // Time: O(log n)
