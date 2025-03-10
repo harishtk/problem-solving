@@ -2,7 +2,14 @@ package leetcode;
 
 public class TriePrefixTree {
     public static void main(String[] args) {
+        Trie trie = new Trie();
+        trie.insert("rambo");
+        trie.insert("rambocop");
         
+        System.out.println(trie.startsWith("ram"));
+        System.out.println(trie.search("rambo"));
+        System.out.println(trie.startsWith("ramc"));
+        System.out.println(trie.search("rambocop"));
     }
 
     static class Trie {

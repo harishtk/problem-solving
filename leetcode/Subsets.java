@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Subsets {
@@ -11,6 +12,18 @@ public class Subsets {
         System.out.println(result);
     }
 
+    // Naive 
+    static List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(Arrays.asList()); // Empty set
+
+        int n = nums.length;
+        
+
+        return result;
+    }
+
+    // Using recursion
     static void subsets(int[] nums, int i, int n, List<Integer> sol, List<List<Integer>> result) {
         if (i == n) {
             result.add(new ArrayList<>(sol));
