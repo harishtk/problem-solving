@@ -2,12 +2,17 @@ package leetcode;
 
 public class WordSearch {
     public static void main(String[] args) {
+        // char[][] board = {
+        //     { 'A', 'B', 'C', 'E' },
+        //     { 'S', 'F', 'C', 'S' },
+        //     { 'A', 'D', 'E', 'E' }
+        // };
+        // String word = "ABCCED";
+
         char[][] board = {
-            { 'A', 'B', 'C', 'E' },
-            { 'S', 'F', 'C', 'S' },
-            { 'A', 'D', 'E', 'E' }
+            {'a'}
         };
-        String word = "ABCCED";
+        String word = "ab";
 
         System.out.println(exist(board, word));
     }
@@ -40,7 +45,7 @@ public class WordSearch {
         if (i < 0 || i >= board.length || j < 0 || j >= board[0].length ||
             visited[i][j] || word.charAt(k) != board[i][j]) { return false; }
 
-        visited[i][j] = true;
+        visited[i][j] = true;   
         boolean found = backtrack(board, i + 1, j, k + 1, word, visited) ||
                         backtrack(board, i, j + 1, k + 1, word, visited) ||
                         backtrack(board, i - 1, j, k + 1, word, visited) ||

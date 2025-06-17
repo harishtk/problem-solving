@@ -1,0 +1,5 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "editor.tabSize": 4,
+    "editor.useTabStops": false
+}

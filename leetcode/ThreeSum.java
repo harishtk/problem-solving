@@ -2,9 +2,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * 15. 3Sum
@@ -41,8 +39,8 @@ public class ThreeSum {
                     j++;
                     k--;
                     // Skip duplicates
-                    while (j < k && nums[j] == nums[j - 1]) continue;
-                    while (j < k && nums[k] == nums[k + 1]) continue;
+                    while (j < k && nums[j] == nums[j - 1]) j++;
+                    while (j < k && nums[k] == nums[k + 1]) k--;
                 } else if (sum < 0) {
                     j++;
                 } else {

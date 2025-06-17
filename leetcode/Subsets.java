@@ -10,6 +10,8 @@ public class Subsets {
         List<List<Integer>> result = new ArrayList<>();
         subsets(input, 0, input.length, new ArrayList<>(), result);
         System.out.println(result);
+
+        System.out.println(subsets(input));
     }
 
     // Naive 
@@ -17,8 +19,14 @@ public class Subsets {
         List<List<Integer>> result = new ArrayList<>();
         result.add(Arrays.asList()); // Empty set
 
-        int n = nums.length;
-        
+        for (int num : nums) {
+            int n = result.size();
+            for (int i = 0; i < n; i++) {
+                List<Integer> subset = new ArrayList<>(result.get(i));
+                subset.add(num);
+                result.add(subset);
+            }
+        }
 
         return result;
     }

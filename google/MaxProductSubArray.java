@@ -1,7 +1,5 @@
 package google;
 
-import java.util.Arrays;
-
 public class MaxProductSubArray {
     public static void main(String[] args) {
         int[] arr = {3, 5, -2, -4};

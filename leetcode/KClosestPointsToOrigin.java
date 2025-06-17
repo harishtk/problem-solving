@@ -1,6 +1,5 @@
 package leetcode;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
@@ -20,26 +19,22 @@ public class KClosestPointsToOrigin {
         int k = 2;   
 
         Util.printMatrix(kClosest(points, k));
+        System.out.println();
         Util.printMatrix(kClosest2(points, k));
+        System.out.println();
+        Util.printMatrix(kClosest3(points, k));
     }
 
     public static int[][] kClosest(int[][] points, int k) {
         PriorityQueue<Pair<Double, int[]>> heap = new PriorityQueue<>(
-            new Comparator<Pair<Double, int[]>>() {
-                @Override
-                public int compare(Pair<Double, int[]> o1, Pair<Double, int[]> o2) {
-                    return Double.compare(o2.getKey(), o1.getKey());
-                }
-                
-            }
-        ); 
+            (Pair<Double, int[]> o1, Pair<Double, int[]> o2) -> Double.compare(o2.getKey(), o1.getKey())); 
 
         for (int[] pt : points) {
             double dist = Math.pow(pt[0], 2) + Math.pow(pt[1], 2);
             if (heap.size() < k) {
-                heap.offer(new Pair<Double,int[]>(dist, pt));
+                heap.offer(new Pair<>(dist, pt));
             } else {
-                heap.offer(new Pair<Double,int[]>(dist, pt));
+                heap.offer(new Pair<>(dist, pt));
                 heap.poll();
             }
         }
@@ -74,5 +69,52 @@ public class KClosestPointsToOrigin {
         }
 
         return result;
+    }
+
+    // Using Quick-Select (a modified version of quicksort)
+    public static int[][] kClosest3(int[][] points, int k) {
+        quickSelect(points, 0, points.length - 1, k);
+        int[][] result = new int[k][2];
+        System.arraycopy(points, 0, result, 0, k);
+        return result;
+    }
+
+    private static void quickSelect(int[][] points, int left, int right, int k) {
+        if (left >= right) return;
+
+        int pivotIndex = partition(points, left, right);
+        int leftLength = pivotIndex - left + 1;
+
+        if (k < leftLength) {
+            quickSelect(points, left, pivotIndex - 1, k);
+        } else if (k > leftLength) {
+            quickSelect(points, pivotIndex + 1, right, k - leftLength);
+        }
+    }
+
+    private static int partition(int[][] points, int left, int right) {
+        int[] pivot = points[right];
+        double pivotDist = dist(pivot);
+        int i = left;
+
+        for (int j = left; j < right; j++) {
+            if (dist(points[j]) < pivotDist) {
+                swap(points, i, j);
+                i++;
+            }
+        }
+
+        swap(points, i, right);
+        return i;
+    }
+
+    private static double dist(int[] point) {
+        return point[0] * point[0] + point[1] * point[1];
+    }
+
+    private static void swap(int[][] points, int i, int j) {
+        int[] temp = points[i];
+        points[i] = points[j];
+        points[j] = temp; 
     }
 }
